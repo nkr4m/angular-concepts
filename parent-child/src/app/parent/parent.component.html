@@ -1,0 +1,21 @@
+<div class="container-fluid" style="border: 1px solid black">
+    <div class="row">
+      <div class="col" style="padding: 20px;">
+        <h1>Parent-Child data transfer</h1>
+        <app-child-v1 [counter]="counter" [backCounter]="backCounter"></app-child-v1>
+        <br>
+        <button type="submit" (click)="onClick()">Counter Increment(parent)</button>
+        <button type="submit" (click)="onBackClick()">back-Counter decrement(parent)</button>
+      </div>
+      <div class="col" style="padding: 20px;">
+        <h1>Child-Parent data transfer</h1>
+        <label for="">count</label>
+        <input class="form-control" type="number" name="" id="" readonly [(ngModel)]="count">
+        <app-child-v2 (count)="count" (newItemEvent)="newItemEvent($event)"></app-child-v2>
+      </div>
+    </div>
+
+  </div>
+
+
+  <p #cc1>This is an example for view-child</p>
